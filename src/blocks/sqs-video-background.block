@@ -1,0 +1,10 @@
+{.section video}
+  <div class="sqs-video-background content-fill" data-config-url="{url}" data-config-playback-speed="{playbackSpeed}" data-config-filter="{filter}" data-config-filter-strength="{filterStrength}">
+    {.section videoFallbackContentItem}
+      <img {@|image-meta} class="custom-fallback-image" />
+    {.end}
+
+    <div id="player"></div>
+
+  </div>
+{.end}
