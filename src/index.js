@@ -1,6 +1,6 @@
-import { VideoBackground as VideoBackgroundRenderer } from '@sqs/video-background-rendering';
+import { VideoBackground as VideoBackgroundRenderer } from '@squarespace/video-background-rendering';
 import getVideoProps from './GetVideoPropsFromNode';
-import { Tweak } from '@sqs/core';
+import { Tweak } from '@squarespace/core';
 
 function VideoBackground(element, tweaksToWatch) {
   const rootNode = element.querySelector('.sqs-video-background');
