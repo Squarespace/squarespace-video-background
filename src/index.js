@@ -6,30 +6,28 @@ function VideoBackground(element, afterInitialize) {
   const props = getVideoProps(rootNode);
   let renderer;
 
-  const scaleRendererVideo = () => {
+  const handleResize = () => {
     renderer.scaleVideo();
   };
 
-  const instantiateRenderer = () => {
-    renderer = new VideoBackgroundRenderer(props);
-  };
-
-  const destroyRenderer = () => {
+  const handleTweak = () => {
     renderer.destroy();
+    renderer = new VideoBackgroundRenderer(props);
   };
 
   if (typeof afterInitialize === 'function') {
     afterInitialize({
-      instantiateRenderer,
-      destroyRenderer,
-      scaleRendererVideo
+      handleResize,
+      handleTweak
     });
   }
 
-  instantiateRenderer();
+  renderer = new VideoBackgroundRenderer(props);
 
   return {
-    destroy: destroyRenderer
+    destroy: () => {
+      renderer.destroy();
+    }
   };
 }
 
