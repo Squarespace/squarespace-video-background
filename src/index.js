@@ -4,7 +4,7 @@ import getVideoProps from './GetVideoPropsFromNode';
 function VideoBackground(element, afterInitialize) {
   const rootNode = element.querySelector('.sqs-video-background');
   const props = getVideoProps(rootNode);
-  let renderer;
+  let renderer = new VideoBackgroundRenderer(props);
 
   const handleResize = () => {
     renderer.scaleVideo();
@@ -21,8 +21,6 @@ function VideoBackground(element, afterInitialize) {
       handleTweak
     });
   }
-
-  renderer = new VideoBackgroundRenderer(props);
 
   return {
     destroy: () => {
