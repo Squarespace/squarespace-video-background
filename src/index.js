@@ -1,24 +1,32 @@
 import { VideoBackground as VideoBackgroundRenderer } from '@squarespace/video-background-rendering';
 import getVideoProps from './GetVideoPropsFromNode';
-import { Tweak } from '@squarespace/core';
 
-function VideoBackground(element, tweaksToWatch) {
+function VideoBackground(element, afterInitialize) {
   const rootNode = element.querySelector('.sqs-video-background');
   const props = getVideoProps(rootNode);
   let renderer = new VideoBackgroundRenderer(props);
 
-  const destroy = () => {
-    renderer.destroy();
+  const handleResize = () => {
+    renderer.scaleVideo();
   };
 
-  if (tweaksToWatch) {
-    Tweak.watch(tweaksToWatch, () => {
-      renderer.destroy();
-      renderer = new VideoBackgroundRenderer(props);
+  const handleTweak = () => {
+    renderer.destroy();
+    renderer = new VideoBackgroundRenderer(props);
+  };
+
+  if (typeof afterInitialize === 'function') {
+    afterInitialize({
+      handleResize,
+      handleTweak
     });
   }
 
-  return { destroy };
+  return {
+    destroy: () => {
+      renderer.destroy();
+    }
+  };
 }
 
 export default VideoBackground;
