@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "@squarespace/core": "^1.0.0",
-    "@squarespace/video-background-rendering": "1.1.1"
+    "@squarespace/video-background-rendering": "1.1.2"
   },
   "main": "dist/index.js",
   "module": "src/index.js",
