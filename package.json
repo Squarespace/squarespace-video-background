@@ -1,6 +1,6 @@
 {
   "name": "@squarespace/video-background",
-  "version": "2.0.7",
+  "version": "2.0.8",
   "author": "Squarespace, Inc.",
   "description": "A partial, styles and scripts from implementing @squarespace/video-background-rendering in Squarespace templates",
   "license": "SEE LICENSE IN LICENSE.txt",
@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "@squarespace/core": "^1.0.0",
-    "@squarespace/video-background-rendering": "1.1.3"
+    "@squarespace/video-background-rendering": "1.1.4"
   },
   "main": "dist/index.js",
   "module": "src/index.js",
