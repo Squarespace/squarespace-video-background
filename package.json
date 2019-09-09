@@ -1,6 +1,6 @@
 {
   "name": "@squarespace/video-background",
-  "version": "2.0.10",
+  "version": "2.1.0",
   "author": "Squarespace, Inc.",
   "description": "A partial, styles and scripts from implementing @squarespace/video-background-rendering in Squarespace templates",
   "license": "SEE LICENSE IN LICENSE.txt",
